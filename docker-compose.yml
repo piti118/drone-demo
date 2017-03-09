@@ -35,10 +35,12 @@ services:
       - letsencrypt-nginx-proxy-companion
     environment:
       - DRONE_OPEN=true
+      - DRONE_ORGS=hdata_moph
       - DRONE_BITBUCKET=true
-      - DRONE_BITBUCKET_CLIENT=GjjUaZUa7mPaaUC94X
+      - DRONE_ADMIN=piti118
+      - DRONE_BITBUCKET_CLIENT=HUAaAk6TPTtjJZC5Rq
       - DRONE_SECRET=f8ef5c9f-69d7-4c58-9c0d-9adfd13e5063
-      - DRONE_BITBUCKET_SECRET=Qq4N9azdHURRzBmPVhHfGhBKQ5ScPQLr
+      - DRONE_BITBUCKET_SECRET=gSmGkPCz36ennJVS7z7epWg89zBvpLTj
       - VIRTUAL_HOST=dronedemo.maonoi.com
       - LETSENCRYPT_HOST=dronedemo.maonoi.com
       - LETSENCRYPT_EMAIL=piti118@gmail.com
