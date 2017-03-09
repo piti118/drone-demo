@@ -40,7 +40,7 @@ services:
       - DRONE_SECRET=f8ef5c9f-69d7-4c58-9c0d-9adfd13e5063
       - VIRTUAL_HOST=dronedemo.maonoi.com
       - LETSENCRYPT_HOST=dronedemo.maonoi.com
-      - LETSENCRYPT_EMAIL=dronedemo.maonoi.com
+      - LETSENCRYPT_EMAIL=piti118@gmail.com
 
   drone-agent:
     image: drone/drone:0.5
