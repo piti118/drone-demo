@@ -35,7 +35,6 @@ services:
       - letsencrypt-nginx-proxy-companion
     environment:
       - DRONE_OPEN=true
-      - DRONE_ORGS=hdata_moph
       - DRONE_BITBUCKET=true
       - DRONE_BITBUCKET_CLIENT=HUAaAk6TPTtjJZC5Rq
       - DRONE_BITBUCKET_SECRET=gSmGkPCz36ennJVS7z7epWg89zBvpLT
@@ -48,11 +47,10 @@ services:
     image: drone/drone:0.5
     command: agent
     restart: always
-    depends_on: 
+    depends_on:
       - drone-server
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - DRONE_SECRET=f8ef5c9f-69d7-4c58-9c0d-9adfd13e5063
       - DRONE_SERVER=ws://drone-server:8000/ws/broker
-  
