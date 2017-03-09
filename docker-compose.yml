@@ -34,7 +34,8 @@ services:
     depends_on:
       - letsencrypt-nginx-proxy-companion
     environment:
-      - DRONE_OPEN=true
+      - DRONE_OPEN=false
+      - DRONE_ADMIN=piti118
       - DRONE_BITBUCKET=true
       - DRONE_BITBUCKET_CLIENT=HUAaAk6TPTtjJZC5Rq
       - DRONE_BITBUCKET_SECRET=gSmGkPCz36ennJVS7z7epWg89zBvpLT
