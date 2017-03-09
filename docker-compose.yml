@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /certs:/etc/nginx/certs:ro
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  letsencrypt-nginx-proxy-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    volumes_from:
+      - nginx-proxy
+    volumes:
+      - /certs:/etc/nginx/certs:rw
+      - /usr/share/nginx/html
+      - /etc/nginx/vhost.d
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  drone-server:
+    image: drone/drone:0.5
+    environment:
+      - DRONE_BITBUCKET=true
+      - DRONE_BITBUCKET_CLIENT=HUAaAk6TPTtjJZC5Rq
+      - DRONE_BITBUCKET_SECRET=gSmGkPCz36ennJVS7z7epWg89zBvpLT
+      - VIRTUAL_HOST=dronedemo.maonoi.com
+      - LETSENCRYPT_HOST=dronedemo.maonoi.com
+      - LETSENCRYPT_EMAIL=dronedemo.maonoi.com
