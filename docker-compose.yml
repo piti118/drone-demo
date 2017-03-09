@@ -52,4 +52,5 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - DRONE_SECRET=f8ef5c9f-69d7-4c58-9c0d-9adfd13e5063
+      - DRONE_SERVER=ws://drone-server:8000/ws/broker
   
