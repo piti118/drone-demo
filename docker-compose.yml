@@ -26,7 +26,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   drone-server:
-    image: drone/drone:0.5
+    image: drone/drone:latest
     expose:
       - 8000
     volumes:
@@ -35,7 +35,6 @@ services:
       - letsencrypt-nginx-proxy-companion
     environment:
       - DRONE_OPEN=true
-      - DRONE_ADMIN=piti118
       - DRONE_BITBUCKET=true
       - DRONE_BITBUCKET_CLIENT=HUAaAk6TPTtjJZC5Rq
       - DRONE_SECRET=f8ef5c9f-69d7-4c58-9c0d-9adfd13e5063
